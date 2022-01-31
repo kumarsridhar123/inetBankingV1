@@ -2,23 +2,23 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-01-25T14:11:08 EST" name="INETBANKINGV1" finished-at="2022-01-25T14:11:18 EST" duration-ms="10792">
+  <suite started-at="2022-01-30T21:27:26 EST" name="INETBANKINGV1" finished-at="2022-01-30T21:27:43 EST" duration-ms="17435">
     <groups>
     </groups>
-    <test started-at="2022-01-25T14:11:08 EST" name="Bankingapp test" finished-at="2022-01-25T14:11:18 EST" duration-ms="10792">
+    <test started-at="2022-01-30T21:27:26 EST" name="Bankingapp test" finished-at="2022-01-30T21:27:43 EST" duration-ms="17435">
       <class name="com.inetbanking.testCases.TC_LoginTest_001">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.inetbanking.testCases.TC_LoginTest_001@5158b42f]" started-at="2022-01-25T14:11:08 EST" name="setup" finished-at="2022-01-25T14:11:15 EST" duration-ms="7757" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.inetbanking.testCases.TC_LoginTest_001@5158b42f]" started-at="2022-01-30T21:27:26 EST" name="setup" finished-at="2022-01-30T21:27:38 EST" duration-ms="12716" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[ie]]>
+                <![CDATA[firefox]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="logintest()[pri:0, instance:com.inetbanking.testCases.TC_LoginTest_001@5158b42f]" started-at="2022-01-25T14:11:15 EST" name="logintest" finished-at="2022-01-25T14:11:18 EST" duration-ms="2586" status="FAIL">
+        <test-method signature="logintest()[pri:0, instance:com.inetbanking.testCases.TC_LoginTest_001@5158b42f]" started-at="2022-01-30T21:27:38 EST" name="logintest" finished-at="2022-01-30T21:27:40 EST" duration-ms="1886" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>
@@ -64,7 +64,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logintest -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.inetbanking.testCases.TC_LoginTest_001@5158b42f]" started-at="2022-01-25T14:11:18 EST" name="teardown" finished-at="2022-01-25T14:11:18 EST" duration-ms="393" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.inetbanking.testCases.TC_LoginTest_001@5158b42f]" started-at="2022-01-30T21:27:40 EST" name="teardown" finished-at="2022-01-30T21:27:43 EST" duration-ms="2766" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

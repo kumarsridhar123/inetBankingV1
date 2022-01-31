@@ -5,7 +5,7 @@
     <listener class-name="com.inetbanking.utilities.Reporting"/>
   </listeners>
   <test thread-count="5" name="Bankingapp test(failed)">
-    <parameter name="browser" value="ie"/>
+    <parameter name="browser" value="firefox"/>
     <classes>
       <class name="com.inetbanking.testCases.TC_LoginTest_001">
         <methods>

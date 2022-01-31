@@ -10,7 +10,7 @@
 
 <test name = "Bankingapp test">
 
-<parameter name="browser" value="ie"> </parameter>
+<parameter name="browser" value="firefox"> </parameter>
 <classes>
 <class name = "com.inetbanking.testCases.TC_LoginTest_001" />
 

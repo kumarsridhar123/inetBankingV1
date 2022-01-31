@@ -36,7 +36,7 @@ public class Baseclass {
 	{
 		
   	    logger= Logger.getLogger("ebanking");
-	    PropertyConfigurator.configure("Log4j.properties");
+	    PropertyConfigurator.configure("log4j.properties");
 	    
 	    if (br.equals("chrome"))
 	    { 

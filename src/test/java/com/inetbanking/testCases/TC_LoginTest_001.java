@@ -16,6 +16,7 @@ public class TC_LoginTest_001 extends Baseclass {
 	@Test	
 	public void logintest() throws IOException
 	{
+		
 	 driver.get(baseURL);
 	 logger.info("url is opened");
 	 LoginPage lp = new LoginPage(driver);
@@ -25,7 +26,7 @@ public class TC_LoginTest_001 extends Baseclass {
 	 logger.info("Entered password");
 	 lp.clicksubmit();
 
-	 if (driver.getTitle().equals("Guru99 Bank Manager HomePage1")) {
+	 if (driver.getTitle().equals("Guru99 Bank Manager HomePage")) {
 		 captureScreen(driver,"loginTest");
 		 Assert.assertTrue(true);
 		 logger.info("Login test passed");

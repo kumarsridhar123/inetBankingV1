@@ -1,8 +1,9 @@
 package com.inetbanking.utilities;
 
+import java.io.File;
+
 // listeners class used to generate extent reports
 
-import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -16,23 +17,23 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-import com.aventstack.extentreports.reporter.configuration.ChartLocation;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 //Cannot invoke "com.aventstack.extentreports.ExtentReports.flush()" because "this.extent" is null
 
 public class Reporting extends TestListenerAdapter {
 	
-	public ExtentHtmlReporter htmlReporter;
+	public ExtentSparkReporter htmlReporter ;
 	public ExtentReports extent;
 	public ExtentTest logger;
 	
-	public void onstart(ITestContext testContext ) {
+	public void onstart(ITestContext testContext ) throws IOException {
 		
 	String timestamp = new SimpleDateFormat("yyyy.mm.dd.hh.mm.ss").format(new Date());
-	String reportname = "Test-Report" +timestamp+".html";
-	htmlReporter= new ExtentHtmlReporter(System.getProperty("user.dir")+ "/test-output/"+reportname);
+	String reportname = "Test-Report-" +timestamp+".html";
+
+	htmlReporter= new ExtentSparkReporter(System.getProperty("user.dir")+ "/test-output/"+reportname);
 	htmlReporter.loadXMLConfig(System.getProperty("user.dir")+"/extent-config.xml");
 	
 	extent =new ExtentReports();  //C:\Users\USER\eclipse-workspace\inetBankingV1
@@ -44,10 +45,12 @@ public class Reporting extends TestListenerAdapter {
 	
 	htmlReporter.config().setDocumentTitle("Inetbanking test Project");
 	htmlReporter.config().setReportName("Functional test report");
-	htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
+//	htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
 	htmlReporter.config().setTheme(Theme.DARK);
 	}
+	
 	public void ontestsuccess (ITestResult tr) {
+    
 	logger=extent.createTest(tr.getName()); // create new entru in the report
 	logger.log(Status.PASS,MarkupHelper.createLabel(tr.getName(),ExtentColor.GREEN));// send the passed information
 	}
@@ -60,13 +63,7 @@ public class Reporting extends TestListenerAdapter {
 	
 	if(f.exists())
 	{
-	try {
-		logger.fail("Screenshot is below:" + logger.addScreenCaptureFromPath(screenshotpath));
-	} catch (IOException e) 
-	
-	{
-		e.printStackTrace();
-	}
+	logger.fail("Screenshot is below:" + logger.addScreenCaptureFromPath(screenshotpath));
 	
 	}
 	}
@@ -79,13 +76,13 @@ public class Reporting extends TestListenerAdapter {
     }
 	
 	
-	/*
-	 * public void onFinish(ITestContext testContext) {
-	 * 
-	 * extent.flush();
-	 * 
-	 * }
-	 */
+	
+	  public void onFinish(ITestContext testContext) {
+	 
+	  extent.flush();
+	  
+	  }
+	 
 	 
 	
     }
